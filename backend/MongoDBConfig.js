@@ -1,4 +1,4 @@
 const username = "LucasHelias";
-const password = "nes40loljor";
+const password = "";
 
 module.exports = {username , password};
