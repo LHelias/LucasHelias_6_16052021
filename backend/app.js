@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const bodyParser = require('body-parser');
 const express = require('express');
-const allRoutes = require('./routes/allRoutes');
+const sauceRoutes = require('./routes/sauce');
 const userRoutes = require ('./routes/user');
 const mongoose = require('mongoose');
 
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use(allRoutes);
+app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
 
 module.exports = app;
