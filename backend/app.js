@@ -1,11 +1,12 @@
-const mongoDBConfig = require('./MongoDBConfig');
+const dotenv = require('dotenv');
+dotenv.config();
 const bodyParser = require('body-parser');
 const express = require('express');
 const allRoutes = require('./routes/allRoutes');
 const userRoutes = require ('./routes/user');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://' + mongoDBConfig.username + ':' + mongoDBConfig.password + '@clusteroc-cours.v3ntp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@clusteroc-cours.v3ntp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
