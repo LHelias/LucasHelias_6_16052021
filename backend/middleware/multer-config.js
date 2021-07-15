@@ -1,3 +1,4 @@
+//multer permet ici d'importer des images en jpg ou png sur le serveur dans un dossier uploads.
 const multer = require('multer');
 
 const MIME_TYPES = {
